@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27E9957A1F658083003D413A /* regions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27E995791F658083003D413A /* regions.plist */; };
+		27E9957C1F65F558003D413A /* mylocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 27E9957B1F65F558003D413A /* mylocation.gpx */; };
 		81A40BFB1F51D00200D8D76E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A40BFA1F51D00200D8D76E /* main.m */; };
 		81A40BFE1F51D00200D8D76E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A40BFD1F51D00200D8D76E /* AppDelegate.m */; };
 		81A40C011F51D00200D8D76E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A40C001F51D00200D8D76E /* ViewController.m */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27E995791F658083003D413A /* regions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regions.plist; sourceTree = "<group>"; };
+		27E9957B1F65F558003D413A /* mylocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mylocation.gpx; sourceTree = "<group>"; };
 		81A40BF61F51D00200D8D76E /* geofence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geofence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81A40BFA1F51D00200D8D76E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		81A40BFC1F51D00200D8D76E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 		81A40BED1F51D00200D8D76E = {
 			isa = PBXGroup;
 			children = (
+				27E9957B1F65F558003D413A /* mylocation.gpx */,
 				81A40BF81F51D00200D8D76E /* geofence */,
 				81A40BF71F51D00200D8D76E /* Products */,
 				81A40C131F51D09200D8D76E /* Frameworks */,
@@ -72,6 +77,7 @@
 				81A40C081F51D00200D8D76E /* Assets.xcassets */,
 				81A40C0A1F51D00200D8D76E /* LaunchScreen.storyboard */,
 				81A40C0D1F51D00200D8D76E /* Info.plist */,
+				27E995791F658083003D413A /* regions.plist */,
 				81A40C051F51D00200D8D76E /* geofence.xcdatamodeld */,
 				81A40BF91F51D00200D8D76E /* Supporting Files */,
 			);
@@ -152,8 +158,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E9957C1F65F558003D413A /* mylocation.gpx in Resources */,
 				81A40C0C1F51D00200D8D76E /* LaunchScreen.storyboard in Resources */,
 				81A40C091F51D00200D8D76E /* Assets.xcassets in Resources */,
+				27E9957A1F658083003D413A /* regions.plist in Resources */,
 				81A40C041F51D00200D8D76E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +297,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = geofence/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.dauster.geofence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = geofence/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.dauster.geofence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -325,6 +335,7 @@
 				81A40C121F51D00200D8D76E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

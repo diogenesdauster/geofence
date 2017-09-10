@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>description</key>
+		<string>Unibratec</string>
+		<key>url</key>
+		<string>www.unibratec.edu.br</string>
+		<key>radius</key>
+		<string>300</string>
+		<key>latitude</key>
+		<real>-8151551751235225</real>
+		<key>longitude</key>
+		<real>-3491992324590683</real>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>Tempero da Galega</string>
+		<key>url</key>
+		<string>temperodagalegasel.wixsite.com</string>
+		<key>latitude</key>
+		<real>-8151813279412462</real>
+		<key>longitude</key>
+		<real>-3491933047771454</real>
+		<key>radius</key>
+		<integer>300</integer>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>Concessionária Chevrolet Autonunes</string>
+		<key>url</key>
+		<string>autonuneschevroletjaboatao.com.br</string>
+		<key>latitude</key>
+		<real>-8152806288396125</real>
+		<key>longitude</key>
+		<real>-3492024779319763</real>
+		<key>radius</key>
+		<integer>300</integer>
+	</dict>
+</array>
+</plist>
