@@ -8,11 +8,11 @@
 		<key>url</key>
 		<string>www.unibratec.edu.br</string>
 		<key>radius</key>
-		<string>300</string>
+		<string>50</string>
 		<key>latitude</key>
-		<real>-8151551751235225</real>
+		<real>-8.151551751235219</real>
 		<key>longitude</key>
-		<real>-3491992324590683</real>
+		<real>-34.91992324590683</real>
 	</dict>
 	<dict>
 		<key>description</key>
@@ -20,11 +20,11 @@
 		<key>url</key>
 		<string>temperodagalegasel.wixsite.com</string>
 		<key>latitude</key>
-		<real>-8151813279412462</real>
+		<real>-8.15181327941246</real>
 		<key>longitude</key>
-		<real>-3491933047771454</real>
+		<real>-34.91933047771454</real>
 		<key>radius</key>
-		<integer>300</integer>
+		<integer>50</integer>
 	</dict>
 	<dict>
 		<key>description</key>
@@ -32,11 +32,11 @@
 		<key>url</key>
 		<string>autonuneschevroletjaboatao.com.br</string>
 		<key>latitude</key>
-		<real>-8152806288396125</real>
+		<real>-8.152806288396125</real>
 		<key>longitude</key>
-		<real>-3492024779319763</real>
+		<real>-34.92024779319763</real>
 		<key>radius</key>
-		<integer>300</integer>
+		<integer>50</integer>
 	</dict>
 </array>
 </plist>

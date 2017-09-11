@@ -42,7 +42,8 @@
     self.mapView.showsUserLocation = YES; // Um valor booleano que indica se o mapa deve tentar exibir a localização do usuário.
     self.mapView.userTrackingMode = MKUserTrackingModeFollow; // O modo utilizado para rastrear a localização do usuário. (O mapa segue a localização do usuário.)
     
-    
+    // 4. Configura geofence
+    [self setupData:[self buildGeofenceData]];
     
 }
 
@@ -57,7 +58,6 @@
             
             if([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]){
                 [self.locationManager requestAlwaysAuthorization];
-                [self.locationManager startUpdatingLocation];
             }
             
             break;
@@ -73,9 +73,6 @@
             break;
     }
     
-    // 4. Configura geofence
-    [self setupData:[self buildGeofenceData]];
-    
 }
 
 
@@ -88,25 +85,40 @@
         //inicia o monitoramento das regiões
         for(CLCircularRegion *geofence in geofences) {
             
-            geofence.notifyOnExit =YES;
-            geofence.notifyOnEntry =YES;
+            geofence.notifyOnEntry = YES;
+            geofence.notifyOnExit  = YES;
             
             //2. cria regiões baseada no arquivo plist
             [self.locationManager startMonitoringForRegion:geofence];
-        
+    
+            
+            //4. cria uma annotation com informação do local
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            annotation.coordinate = geofence.center;
+            annotation.title = geofence.identifier;
+            
+            [self.mapView addAnnotation:annotation];
+            
+            
             //3. cria um circulo para demarca a região que esta sendo monitorada
             MKCircle *circle = [MKCircle circleWithCenterCoordinate:geofence.center radius:geofence.radius];
             circle.title     = geofence.description;
             [self.mapView addOverlay:circle];
             
-            //4. cria uma annotation com informação do local
-            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-            annotation.coordinate = geofence.center;
-            annotation.title = geofence.description;
-            
-            [self.mapView addAnnotation:annotation];
-            
         }
+        
+    
+        CLCircularRegion *region = geofences[0];
+        
+        MKCoordinateRegion theRegion;
+        theRegion.center.latitude  = region.center.latitude;
+        theRegion.center.longitude = region.center.longitude;
+        
+        // Zoom out
+        theRegion.span.longitudeDelta = 0.005;
+        theRegion.span.latitudeDelta  = 0.005;
+        
+        [self.mapView setRegion:theRegion animated:YES];
         
     }
     else {
@@ -173,13 +185,17 @@
 // função que ira ser chamada quando eu entrar na regiões monitoradas
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
-    NSLog(@"entrou");
+    NSLog(@"entrou %@",region.identifier);
 }
 
 // função que ira ser chamada quando eu sair das regiões monitoradas
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
 {
-    NSLog(@"Saiuuu");
+    NSLog(@"saiu %@",region.identifier);
+}
+
+- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error{
+    NSLog(@"error %@",region.identifier);
 }
 
 
